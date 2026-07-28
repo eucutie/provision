@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survival Guide | PRO.VISION 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #05010d; color: #ffffff; margin: 0; }
+        .mesh-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background: radial-gradient(at 0% 100%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 100% 100%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                        radial-gradient(at 50% 0%, rgba(5, 1, 13, 1) 0px, transparent 100%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #f472b6, #a855f7);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .neon-pink { border: 1px solid rgba(244, 114, 182, 0.4); box-shadow: 0 0 15px rgba(244, 114, 182, 0.2); }
+    </style>
+</head>
+<body class="p-8">
+    <div class="mesh-bg"></div>
+
+    <header class="max-w-4xl mx-auto text-center mt-20 mb-16">
+        <div class="inline-block px-4 py-1 rounded-full border border-pink-500/30 bg-pink-500/10 text-pink-400 text-xs font-bold mb-6 tracking-widest uppercase">
+            Official 2026 Protocol
+        </div>
+        <h1 class="text-6xl font-black mb-4">Survival <span class="gradient-text">Guide.</span></h1>
+        <p class="text-gray-400">Because the future is a mess and you aren't prepared.</p>
+    </header>
+
+    <main class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
+        
+        <!-- Survival Tip 1 -->
+        <div class="glass-card rounded-3xl p-8 neon-pink">
+            <h3 class="text-xl font-bold text-pink-400 mb-4">1. Handling Brain-Rot</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                If you find yourself "Neuro-Yawning" more than 50 times per hour, please disconnect your neural link. If you see bread with more than five fingers, <strong>do not eat it.</strong> It is a hallucination.
+            </p>
+        </div>
+
+        <!-- Survival Tip 2 -->
+        <div class="glass-card rounded-3xl p-8 border-blue-500/30">
+            <h3 class="text-xl font-bold text-blue-400 mb-4">2. Smart Home Defense</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                If your $5,000 Smart Fridge locks the door and refuses to let you out until you watch 10 TikToks, remain calm. Use the emergency analog opener (the handle) or wait for the next firmware update.
+            </p>
+        </div>
+
+        <!-- Survival Tip 3 -->
+        <div class="glass-card rounded-3xl p-8 border-purple-500/30">
+            <h3 class="text-xl font-bold text-purple-400 mb-4">3. Grok Avoidance</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                When encountering a pathological AI in the wild, do not try to reason with it. Simply mention "Stock Market Regulations" or "Actual Citations" and it will disappear into a cloud of logic-smoke.
+            </p>
+        </div>
+
+        <!-- Survival Tip 4 -->
+        <div class="glass-card rounded-3xl p-8 border-white/20">
+            <h3 class="text-xl font-bold text-white mb-4">4. Finnish Stealth</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                To avoid Petteri Orpo taking your last 5 euros for his "One Hour Train" project, pretend to be a private healthcare consultant. He will immediately offer you a grant instead of taxing you.
+            </p>
+        </div>
+
+    </main>
+
+    <footer class="mt-20 text-center">
+        <a href="index.html" class="glass-card px-8 py-3 rounded-full font-bold text-sm hover:bg-white/10 transition">
+            ← Escape Back to Home
+        </a>
+        <p class="mt-10 text-gray-600 text-xs tracking-widest uppercase">Proprietary Knowledge // PRO.VISION 2026</p>
+    </footer>
+</body>
+</html>
