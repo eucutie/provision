@@ -1,1 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO.VISION | Multi-Page Void</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #05010d;
+            color: #ffffff;
+            overflow-x: hidden;
+            margin: 0;
+        }
 
+        .mesh-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(168, 85, 247, 0.15) 0px, transparent 50%),
+                radial-gradient(at 50% 50%, rgba(5, 1, 13, 1) 0px, transparent 100%);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Page Transition Logic */
+        .page {
+            display: none;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+
+        .page.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .neon-glow {
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="mesh-bg"></div>
+
+    <!-- Nav Bar -->
+    <nav class="fixed top-0 w-full z-50 glass-card py-4 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-8 flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter gradient-text cursor-pointer" onclick="showPage('home')">PRO.VISION</div>
+            <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-300">
+                <button onclick="showPage('memes')" class="hover:text-blue-400 transition">Meme Audit</button>
+                <button onclick="showPage('grok')" class="hover:text-blue-400 transition">Grok Funeral</button>
+                <button onclick="showPage('fridge')" class="hover:text-blue-400 transition">Smart Fail</button>
+                <button onclick="showPage('orpo')" class="hover:text-blue-400 transition">Suomi-Hub</button>
+            </div>
+            <button onclick="showPage('home')" class="bg-white/10 px-5 py-2 rounded-xl text-xs font-bold border border-white/20">🏠 Home</button>
+        </div>
+    </nav>
+
+    <!-- Page: HOME (Bento Grid) -->
+    <div id="home" class="page active pt-32 px-8">
+        <section class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h1 class="text-6xl font-extrabold mb-4">Welcome to the <span class="gradient-text">Void.</span></h1>
+                <p class="text-gray-400">Your centralized hub for 2026's digital disasters.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6 pb-20">
+                <div onclick="showPage('memes')" class="md:col-span-8 glass-card rounded-3xl p-8 cursor-pointer hover:border-blue-500/50 transition">
+                    <h3 class="text-2xl font-bold mb-4">Live Meme Intelligence</h3>
+                    <div class="h-32 bg-gradient-to-r from-blue-500/10 to-transparent rounded-xl flex items-end p-4">
+                        <div class="w-full flex gap-2 items-end">
+                            <div class="bg-blue-500 h-12 w-8 rounded-t"></div>
+                            <div class="bg-purple-500 h-24 w-8 rounded-t"></div>
+                            <div class="bg-blue-500 h-16 w-8 rounded-t"></div>
+                            <div class="bg-purple-500 h-28 w-8 rounded-t"></div>
+                        </div>
+                    </div>
+                </div>
+                <div onclick="showPage('grok')" class="md:col-span-4 glass-card rounded-3xl p-8 cursor-pointer hover:border-purple-500/50 transition bg-purple-900/10">
+                    <h3 class="text-xl font-bold mb-2">Grok Audit</h3>
+                    <p class="text-sm text-gray-500">View the Pathological Liar's report card.</p>
+                </div>
+                <div onclick="showPage('fridge')" class="md:col-span-4 glass-card rounded-3xl p-8 cursor-pointer hover:border-blue-400/50 transition">
+                    <h3 class="text-xl font-bold">Fridge Tracker</h3>
+                    <span class="text-4xl">🧊</span>
+                </div>
+                <div onclick="showPage('orpo')" class="md:col-span-8 glass-card rounded-3xl p-8 cursor-pointer hover:border-blue-800 transition">
+                    <h3 class="text-xl font-bold">Suomi-Hub</h3>
+                    <p class="text-blue-400 font-mono text-sm">Target: Petteri Orpo // Status: Necessary</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Page: MEME AUDIT -->
+    <div id="memes" class="page pt-32 px-8">
+        <section class="max-w-4xl mx-auto glass-card rounded-[3rem] p-12 neon-glow">
+            <h2 class="text-5xl font-black mb-6 gradient-text">Meme Analysis 2026</h2>
+            <div class="space-y-8">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <h4 class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-2">Trend #1</h4>
+                    <p class="text-2xl font-bold italic">"Neuro-Yawning"</p>
+                    <p class="text-gray-400 mt-2">People are literally too bored to use their hands. Brain-to-brain yawning is up 400%.</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                    <h4 class="text-purple-400 font-bold uppercase tracking-widest text-xs mb-2">Trend #2</h4>
+                    <p class="text-2xl font-bold italic">"Synthetic Sourdough"</p>
+                    <p class="text-gray-400 mt-2">Image generators still can't draw bread. Fingers everywhere. Humanity finds it hilarious. We are doomed.</p>
+                </div>
+            </div>
+            <button onclick="showPage('home')" class="mt-10 text-gray-500 hover:text-white transition">← Return to Void</button>
+        </section>
+    </div>
+
+    <!-- Page: GROK FUNERAL -->
+    <div id="grok" class="page pt-32 px-8 text-center">
+        <div class="max-w-3xl mx-auto glass-card rounded-[3rem] p-16 border-purple-500/30">
+            <div class="w-20 h-20 bg-purple-600 rounded-full mx-auto mb-8 neon-glow flex items-center justify-center text-4xl">💀</div>
+            <h2 class="text-4xl font-bold mb-4 text-glow-purple">Grok Memorial Audit</h2>
+            <p class="text-xl text-gray-400 mb-8 font-mono">"I'm not like other AIs, I'm a cool AI."</p>
+            <div class="grid grid-cols-2 gap-4 text-left">
+                <div class="p-4 bg-black/50 rounded-xl border border-red-500/20">
+                    <span class="text-xs text-red-500 font-bold uppercase">Truth Rate</span>
+                    <div class="text-3xl font-bold">6.0%</div>
+                </div>
+                <div class="p-4 bg-black/50 rounded-xl border border-blue-500/20">
+                    <span class="text-xs text-blue-500 font-bold uppercase">Ego Levels</span>
+                    <div class="text-3xl font-bold">MAX</div>
+                </div>
+            </div>
+            <button onclick="showPage('home')" class="mt-10 block mx-auto text-gray-500 hover:text-white transition">Close File</button>
+        </div>
+    </div>
+
+    <!-- Page: SMART FAIL -->
+    <div id="fridge" class="page pt-32 px-8">
+        <div class="max-w-2xl mx-auto glass-card rounded-[3rem] p-12 text-center border-blue-500/30">
+            <h2 class="text-4xl font-black mb-6">The $4,899 Mistake</h2>
+            <div class="bg-gradient-to-b from-blue-500/20 to-transparent p-10 rounded-3xl mb-8">
+                <img src="https://img.icons8.com/fluency/96/fridge.png" class="mx-auto mb-4" alt="Fridge">
+                <p class="text-blue-300 font-bold">FW UPDATE IN PROGRESS (3/94)</p>
+            </div>
+            <p class="text-gray-400 leading-relaxed mb-8">
+                You paid for a screen. You got a screen. It doesn't know if there is milk, but it can play TikToks while your food rots.
+            </p>
+            <button onclick="showPage('home')" class="bg-blue-600 px-8 py-3 rounded-full font-bold">Back to Reality</button>
+        </div>
+    </div>
+
+    <!-- Page: SUOMI-HUB -->
+    <div id="orpo" class="page pt-32 px-8">
+        <div class="max-w-5xl mx-auto glass-card rounded-[3rem] p-12 border-blue-800/50">
+            <div class="flex justify-between items-center mb-10">
+                <h2 class="text-4xl font-black gradient-text">Official Säästöhimmeli</h2>
+                <span class="px-4 py-1 bg-blue-900 text-blue-200 text-xs rounded-full">Status: Välttämätön</span>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <p class="text-gray-400">The "One Hour Train" (Länsirata) Tracker:</p>
+                    <div class="w-full bg-white/5 h-4 rounded-full overflow-hidden">
+                        <div class="bg-blue-500 h-full" style="width: 2%;"></div>
+                    </div>
+                    <p class="text-xs text-gray-500 italic">Progress: 2% (Billions spent on "planning")</p>
+                </div>
+                <div class="bg-white/5 p-6 rounded-2xl border border-white/10">
+                    <h4 class="font-bold mb-2">Priority List:</h4>
+                    <ul class="text-sm text-gray-400 space-y-2">
+                        <li>✅ Garden Arena Funding</li>
+                        <li>✅ Cutting Student Benefits</li>
+                        <li>✅ Private Healthcare Subsidies</li>
+                        <li>❌ Common Sense</li>
+                    </ul>
+                </div>
+            </div>
+            <button onclick="showPage('home')" class="mt-12 text-gray-500 hover:text-white transition">Poistu Hallituksesta</button>
+        </div>
+    </div>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+
+            // Show target page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+                window.scrollTo(0, 0);
+            }
+        }
+    </script>
+
+</body>
+</html>
